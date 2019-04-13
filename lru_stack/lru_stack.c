@@ -146,16 +146,18 @@ int ReferencePage( Queue* queue, Hash* hash, unsigned pageNumber )
 
 int main() 
 { 
-    FILE *fp;
-    fp = fopen("Input.txt","r");
+    FILE *fin;
+    FILE *fout;
+    fin = fopen("Input.txt","r");
+	fout = fopen("Output.txt","w");
 	int no_of_frames;
 	no_of_frames=3; 
     Queue* q = createQueue( no_of_frames );
     
     int no_of_pages;
-    printf("The number of elements in the reference string are :");
-    fscanf(fp,"%d",&no_of_pages);
-    printf("%d\n",no_of_pages);
+    fprintf(fout, "The number of elements in the reference string are :");
+    fscanf(fin,"%d",&no_of_pages);
+    fprintf(fout, "%d\n",no_of_pages);
     
     Hash* hash = createHash( no_of_pages ); 
   
@@ -163,19 +165,19 @@ int main()
     int pageValue;
 
     int i=0;
-    printf("\nThe elements present in the string are\n");
+    fprintf(fout, "\nThe elements present in the string are\n");
 	for(i=0;i<no_of_pages;i++){
-    	fscanf(fp,"%d",&pageValue);
-    	printf("%d ",pageValue);
+    	fscanf(fin,"%d",&pageValue);
+    	fprintf(fout, "%d ",pageValue);
 		no_of_page_faults+=ReferencePage( q, hash, pageValue);
 	}
-	printf("\n");
+	fprintf(fout, "\nFinal Queue: ");
 
     while(no_of_frames-- && q->front!=NULL){
-    	printf ("%d ", q->front->pageNumber);
+    	fprintf (fout, "%d ", q->front->pageNumber);
     	q->front=q->front->next;
 	}
-	printf ("\nThe number of page faults are: %d ", no_of_page_faults);
+	fprintf (fout, "\nThe number of page faults are: %d ", no_of_page_faults);
 
     return 0;
 }

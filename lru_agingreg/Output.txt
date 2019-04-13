@@ -1,0 +1,106 @@
+The number of elements in the reference string are :20
+The elements present in the string are
+7  0  1  2  0  3  5  4  2  6  9  3  8  3  2  7  9  8  6  1  
+
+we replaced number at 0
+Current values in frames are :
+    7
+Registers values now :
+    64
+we replaced number at 0
+Current values in frames are :
+    0
+Registers values now :
+    96
+we replaced number at 0
+Current values in frames are :
+    1
+Registers values now :
+    112
+we replaced number at 0
+Current values in frames are :
+    2
+Registers values now :
+    120
+we replaced number at 0
+Current values in frames are :
+    0
+Registers values now :
+    124
+we replaced number at 0
+Current values in frames are :
+    3
+Registers values now :
+    126
+we replaced number at 0
+Current values in frames are :
+    5
+Registers values now :
+    127
+we replaced number at 0
+Current values in frames are :
+    4
+Registers values now :
+    127
+we replaced number at 0
+Current values in frames are :
+    2
+Registers values now :
+    127
+we replaced number at 0
+Current values in frames are :
+    6
+Registers values now :
+    127
+we replaced number at 0
+Current values in frames are :
+    9
+Registers values now :
+    127
+we replaced number at 0
+Current values in frames are :
+    3
+Registers values now :
+    127
+we replaced number at 0
+Current values in frames are :
+    8
+Registers values now :
+    127
+we replaced number at 0
+Current values in frames are :
+    3
+Registers values now :
+    127
+we replaced number at 0
+Current values in frames are :
+    2
+Registers values now :
+    127
+we replaced number at 0
+Current values in frames are :
+    7
+Registers values now :
+    127
+we replaced number at 0
+Current values in frames are :
+    9
+Registers values now :
+    127
+we replaced number at 0
+Current values in frames are :
+    8
+Registers values now :
+    127
+we replaced number at 0
+Current values in frames are :
+    6
+Registers values now :
+    127
+we replaced number at 0
+Current values in frames are :
+    1
+Registers values now :
+    127
+
+Page faults: 20

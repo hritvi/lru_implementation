@@ -1,0 +1,25 @@
+The number of elements in the reference string are :20
+The elements present in the string are
+7  0  1  2  0  3  5  4  2  6  9  3  8  3  2  7  9  8  6  1  
+7	-1	-1	
+7	0	-1	
+7	0	1	
+2	0	1	
+2	0	1	
+2	0	3	
+5	0	3	
+5	4	3	
+5	4	2	
+6	4	2	
+6	9	2	
+6	9	3	
+8	9	3	
+8	9	3	
+8	2	3	
+7	2	3	
+7	2	9	
+7	8	9	
+6	8	9	
+6	8	1	
+
+Total Page Faults for no. of frames 3 = 18

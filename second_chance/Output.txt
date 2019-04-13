@@ -1,0 +1,108 @@
+The number of elements in the reference string are :20
+The elements present in the string are
+7  0  1  2  0  3  5  4  2  6  9  3  8  3  2  7  9  8  6  1  
+
+
+The elements in the frame are
+7
+
+The elements in the frame are
+7
+0
+
+The elements in the frame are
+7
+0
+1
+The page replaced is 7
+
+The elements in the frame are
+2
+0
+1
+The page replaced is 1
+
+The elements in the frame are
+2
+0
+3
+The page replaced is 2
+
+The elements in the frame are
+5
+0
+3
+The page replaced is 0
+
+The elements in the frame are
+5
+4
+3
+The page replaced is 3
+
+The elements in the frame are
+5
+4
+2
+The page replaced is 5
+
+The elements in the frame are
+6
+4
+2
+The page replaced is 4
+
+The elements in the frame are
+6
+9
+2
+The page replaced is 2
+
+The elements in the frame are
+6
+9
+3
+The page replaced is 6
+
+The elements in the frame are
+8
+9
+3
+The page replaced is 9
+
+The elements in the frame are
+8
+2
+3
+The page replaced is 8
+
+The elements in the frame are
+7
+2
+3
+The page replaced is 2
+
+The elements in the frame are
+7
+9
+3
+The page replaced is 3
+
+The elements in the frame are
+7
+9
+8
+The page replaced is 7
+
+The elements in the frame are
+6
+9
+8
+The page replaced is 9
+
+The elements in the frame are
+6
+1
+8
+
+The number of page faults are 18

@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <math.h>
 
+FILE *fin=fopen("Input.txt","r");
+FILE *fout=fopen("Output.txt","w");
+
 int find_page_in_frames(int frames[], int aging_regs[], int page_num, int num_frames, int history_to_look)
 {
     for(int i = 0; i < num_frames; i++) {
@@ -35,17 +38,17 @@ int replace(int frames[], int aging_regs[], int new_page, int num_frames, int hi
 }
 
 void print_regs(int aging_regs[], int num_frames) {
-    printf("Registers values now :\n");
+    fprintf(fout, "Registers values now :\n");
     for(int i = 0; i < num_frames; i++) {
-        printf("    %d\n", aging_regs[i]);
+        fprintf(fout, "    %d\n", aging_regs[i]);
     }
 }
 
 void print_frame_state(int frames[], int num_frames)
 {
-    printf("Current values in frames are :\n");
+    fprintf(fout, "Current values in frames are :\n");
     for (int i = 0; i < num_frames; i++) {
-        printf("    %d\n", frames[i]);
+        fprintf(fout, "    %d\n", frames[i]);
     }
 }
 
@@ -62,9 +65,9 @@ int lru_aging(int requests[], int num_frames_in_system, int history_to_look, int
             page_faults++;
         int replaced_frames_idx = replace(frames, aging_regs, requests[j], num_frames_in_system,
         history_to_look);
-        printf("we replaced number at %d\n", replaced_frames_idx);
+        fprintf(fout, "we replaced number at %d\n", replaced_frames_idx);
         } else{
-            printf("We replaced nothing !\n");
+            fprintf(fout,"We replaced nothing !\n");
         }
         print_frame_state(frames, num_frames_in_system);
         print_regs(aging_regs, num_frames_in_system);
@@ -75,25 +78,24 @@ int lru_aging(int requests[], int num_frames_in_system, int history_to_look, int
 }
 
 int main() {
-    FILE *fp;
-    fp=fopen("Input.txt","r");
     int n;
     int i=0;
-    printf("The number of elements in the reference string are :");
-    fscanf(fp,"%d",&n);
-    printf("%d",n);
+    
+	fprintf(fout, "The number of elements in the reference string are :");
+    fscanf(fin,"%d",&n);
+    fprintf(fout, "%d",n);
     
 	int requests[n];
     
     for(i=0;i<n;i++)
-    	fscanf(fp,"%d",&requests[i]);
-    printf("\nThe elements present in the string are\n");
+    	fscanf(fin,"%d",&requests[i]);
+    fprintf(fout, "\nThe elements present in the string are\n");
     for(i=0;i<n;i++)
-    printf("%d  ",requests[i]);
-    printf("\n\n");
+    	fprintf(fout, "%d  ",requests[i]);
+    fprintf(fout, "\n\n");
     
     // int requests[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
     // int requests[] = {7, 10, 1, 2, 10, 3, 5, 4, 2, 6, 9, 3, 8, 3, 2, 7, 9, 8, 6, 1};
-    std::cout <<"\nPage faults: "<< lru_aging(requests, 1, 6, n) <<"\n"<< std::endl;
+    fprintf(fout, "\nPage faults: %d\n" ,lru_aging(requests, 1, 6, n));
     return 0;
 }
