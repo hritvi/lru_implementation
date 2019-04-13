@@ -7,15 +7,14 @@ int ref[SIZE];
 int frame[SIZE];
 int repptr=0;
 int count=0;
-int display()
-{int i;
-printf("\nThe elements in the frame are\n");
-for(i=0;i<full;i++)
-printf("%d\n",frame[i]);
-    
-    
-    
+
+int display(){
+	int i;
+	printf("\nThe elements in the frame are\n");
+	for(i=0;i<full;i++)
+	printf("%d\n",frame[i]);        
 }
+
 int Pagerep(int ele)
 {
  int temp;
@@ -65,13 +64,13 @@ int main()
     fscanf(fp,"%d",&n);
     printf("%d",n);
     for(i=0;i<n;i++)
-    fscanf(fp,"%d",&a[i]);
+        fscanf(fp,"%d",&a[i]);
     printf("\nThe elements present in the string are\n");
     for(i=0;i<n;i++)
-    printf("%d  ",a[i]);
+        printf("%d  ",a[i]);
     printf("\n\n");
-    for(i=0;i<n;i++)
-    {
+    
+    for(i=0;i<n;i++){
         if(Search(a[i])!=1){
             Pagefault(a[i]);
             display();

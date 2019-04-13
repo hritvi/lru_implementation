@@ -17,19 +17,29 @@ int main()
 {
 	FILE *fp;
     fp=fopen("Input.txt","r");
-    int no_of_frames, no_of_pages, frames[10], pages[30], counter = 0, time[10], flag1, flag2, i, j, pos, faults = 0;
-	no_of_frames=3;
+    // printf("Enter number of frames: ");
+	// scanf("%d", &no_of_frames);
+	no_of_frames=9;
+	int no_of_frames, no_of_pages, frames[no_of_frames], pages[30], counter = 0, time[no_of_frames], flag1, flag2, i, j, pos, faults = 0;
 	
+	// printf("Enter number of pages: ");
+	// scanf("%d", &no_of_pages);
+//	no_of_pages=20;
 	printf("The number of elements in the reference string are :");
     fscanf(fp,"%d",&no_of_pages);
     printf("%d",no_of_pages);
     for(i=0;i<no_of_pages;i++)
-    	fscanf(fp,"%d",&pages[i]);
+    fscanf(fp,"%d",&pages[i]);
     printf("\nThe elements present in the string are\n");
     for(i=0;i<no_of_pages;i++)
-    	printf("%d  ",pages[i]);
+    printf("%d  ",pages[i]);
 	
-
+//	printf("Enter reference string: ");
+//	
+//    for(i = 0; i < no_of_pages; ++i){
+//    	scanf("%d", &pages[i]);
+//    }
+    
 	for(i = 0; i < no_of_frames; ++i){
     	frames[i] = -1;
     }
