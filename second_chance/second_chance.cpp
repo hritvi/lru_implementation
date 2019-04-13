@@ -1,6 +1,10 @@
 #include<stdio.h>
 #include<conio.h>
-#define SIZE 1
+#define SIZE 3
+
+FILE *fin=fopen("Input.txt","r");
+FILE *fout=fopen("Output.txt","w");
+
 int full=0;
 int a[21];
 int ref[SIZE];
@@ -10,9 +14,9 @@ int count=0;
 
 int display(){
 	int i;
-	printf("\nThe elements in the frame are\n");
+	fprintf(fout, "\nThe elements in the frame are\n");
 	for(i=0;i<full;i++)
-	printf("%d\n",frame[i]);        
+	fprintf(fout, "%d\n",frame[i]);        
 }
 
 int Pagerep(int ele)
@@ -39,7 +43,7 @@ int Pagefault(int ele){
         frame[full++]=ele;
     }
     else
-        printf("The page replaced is %d",Pagerep(ele));
+        fprintf(fout, "The page replaced is %d\n",Pagerep(ele));
 }
 int Search(int ele){
     int i,flag;
@@ -58,17 +62,15 @@ int Search(int ele){
 int main()
 {
     int n,i;
-    FILE *fp;
-    fp=fopen("Input.txt","r");
-    printf("The number of elements in the reference string are :");
-    fscanf(fp,"%d",&n);
-    printf("%d",n);
+    fprintf(fout, "The number of elements in the reference string are :");
+    fscanf(fin,"%d",&n);
+    fprintf(fout, "%d",n);
     for(i=0;i<n;i++)
-        fscanf(fp,"%d",&a[i]);
-    printf("\nThe elements present in the string are\n");
+        fscanf(fin,"%d",&a[i]);
+    fprintf(fout, "\nThe elements present in the string are\n");
     for(i=0;i<n;i++)
-        printf("%d  ",a[i]);
-    printf("\n\n");
+        fprintf(fout, "%d  ",a[i]);
+    fprintf(fout, "\n\n");
     
     for(i=0;i<n;i++){
         if(Search(a[i])!=1){
@@ -77,7 +79,7 @@ int main()
              count++;
         }                    
     }
-    printf("\nThe number of page faults are %d\n",count);
+    fprintf(fout, "\nThe number of page faults are %d\n",count);
 //                    getche();
 return 0;
 }

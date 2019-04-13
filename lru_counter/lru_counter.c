@@ -15,24 +15,26 @@ int findLRU(int time[], int n){
  
 int main()
 {
-	FILE *fp;
-    fp=fopen("Input.txt","r");
-    // printf("Enter number of frames: ");
+	FILE *fin;
+	FILE *fout;
+    fin=fopen("Input.txt","r");
+    fout=fopen("Output.txt","w");
+	// printf("Enter number of frames: ");
 	// scanf("%d", &no_of_frames);
-	no_of_frames=9;
-	int no_of_frames, no_of_pages, frames[no_of_frames], pages[30], counter = 0, time[no_of_frames], flag1, flag2, i, j, pos, faults = 0;
+	int no_of_frames=3;
+	int no_of_pages, frames[no_of_frames], pages[30], counter = 0, time[no_of_frames], flag1, flag2, i, j, pos, faults = 0;
 	
 	// printf("Enter number of pages: ");
 	// scanf("%d", &no_of_pages);
 //	no_of_pages=20;
-	printf("The number of elements in the reference string are :");
-    fscanf(fp,"%d",&no_of_pages);
-    printf("%d",no_of_pages);
+	fprintf(fout, "The number of elements in the reference string are :");
+    fscanf(fin,"%d",&no_of_pages);
+    fprintf(fout, "%d",no_of_pages);
     for(i=0;i<no_of_pages;i++)
-    fscanf(fp,"%d",&pages[i]);
-    printf("\nThe elements present in the string are\n");
+    fscanf(fin,"%d",&pages[i]);
+    fprintf(fout, "\nThe elements present in the string are\n");
     for(i=0;i<no_of_pages;i++)
-    printf("%d  ",pages[i]);
+    fprintf(fout, "%d  ",pages[i]);
 	
 //	printf("Enter reference string: ");
 //	
@@ -77,14 +79,14 @@ int main()
     		time[pos] = counter;
     	}
     	
-    	printf("\n");
+    	fprintf(fout, "\n");
     	
     	for(j = 0; j < no_of_frames; ++j){
-    		printf("%d\t", frames[j]);
+    		fprintf(fout, "%d\t", frames[j]);
     	}
 	}
 	
-	printf("\n\nTotal Page Faults = %d", faults);
+	fprintf(fout, "\n\nTotal Page Faults for no. of frames %d = %d",no_of_frames, faults);
     
     return 0;
 }
