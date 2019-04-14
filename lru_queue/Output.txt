@@ -1,6 +1,0 @@
-The number of elements in the reference string are :20
-
-The elements present in the string are
-7 0 1 2 0 3 5 4 2 6 9 3 8 3 2 7 9 8 6 1 
-Final Queue: 1 6 8 
-The number of page faults are: 18 
